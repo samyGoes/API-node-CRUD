@@ -6,11 +6,11 @@ Esta é uma API em Node com um CRUD básico de cinco rotas.
 
 ## Como testar?
 - Acesse: `localhost:3000`
-- Execute: `npm run dev`
+- Dentro da pasta node-web-api execute: `npm run dev`
 - Simule um servidor local para rodar o front-end
 - Entre na pasta bin do mysql e execute o comando no terminal para importar o banco:
 ~~~cmd
-mysql -u root -p < caminho-até-a-pasta/API-node-CRUD/node-web-api/webapi_db.sql~
+mysql -u root -p < caminho-até-a-pasta/API-node-CRUD/node-web-api/webapi_db.sql
 ~~~
 
 ## Documentação
