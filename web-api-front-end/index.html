@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Consumindo a WebAPI</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            input, button { margin: 5px; padding: 5px; }
+            .result { margin-top: 20px; }
+        </style>
+    </head>
+    <body>
+
+        <h1>Interface para WebAPI</h1>
+
+        <section id="get-section">
+            <h2>Listar Usuários (GET)</h2>
+            <button onclick="listarUsuarios()">Listar Usuários</button>
+            <div id="get-result" class="result"></div>
+        </section>
+
+        <section id="get-section">
+            <h2>Listar Usuários pelo ID (GET)</h2>
+            <input type="number" id="get-id" placeholder="ID">
+            <button onclick="listarUsuariosPeloId()">Listar Usuários ID</button>
+            <div id="get-result-id" class="result"></div>
+        </section>
+
+        <section id="post-section">
+            <h2>Criar Usuário (POST)</h2>
+            <input type="text" id="nome" placeholder="Nome">
+            <input type="cargo" id="cargo" placeholder="cargo">
+            <input type="salario" id="salario" placeholder="salario">
+            <button onclick="criarUsuario()">Criar Usuário</button>
+            <div id="post-result" class="result"></div>
+        </section>
+
+        <section id="put-section">
+            <h2>Atualizar Usuário (PUT)</h2>
+            <input type="number" id="put-id" placeholder="ID">
+            <input type="text" id="put-nome" placeholder="Novo Nome">
+            <input type="cargo" id="put-cargo" placeholder="Novo cargo">
+            <input type="salario" id="put-salario" placeholder="Novo salario">
+            <button onclick="atualizarUsuario()">Atualizar Usuário</button>
+            <div id="put-result" class="result"></div>
+        </section>
+
+        <section id="delete-section">
+            <h2>Remover Usuário (DELETE)</h2>
+            <input type="number" id="delete-id" placeholder="ID">
+            <button onclick="removerUsuario()">Remover Usuário</button>
+            <div id="delete-result" class="result"></div>
+        </section>
+
+        
+        <script src="script.js"></script>
+    </body>
+</html>
