@@ -3,56 +3,72 @@
     <head>
         <meta charset="UTF-8">
         <title>Consumindo a WebAPI</title>
-        <style>
-            body { font-family: Arial, sans-serif; margin: 20px; }
-            input, button { margin: 5px; padding: 5px; }
-            .result { margin-top: 20px; }
-        </style>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
 
         <h1>Interface para WebAPI</h1>
 
-        <section id="get-section">
-            <h2>Listar Usuários (GET)</h2>
-            <button onclick="listarUsuarios()">Listar Usuários</button>
-            <div id="get-result" class="result"></div>
-        </section>
+        <section class="cards">
+            <!-- FORMS DE CADASTRO, ATUALIZAÇÃO E REMOÇÃO -->
+            <div class="forms">
+                <nav>
+                    <button id="nav-btn-cadastrar"><i class="fa-solid fa-plus"></i></button>
+                    <button id="nav-btn-atualizar"><i class="fa-solid fa-pen"></i></button>
+                    <button id="nav-btn-deletar"><i class="fa-solid fa-trash"></i></button>
+                </nav>
+                <div class="area-forms">
+                    <section class="card" id="post-section">
+                        <h2>Criar Usuário</h2>
+                        <input type="text" id="nome" placeholder="Nome" required>
+                        <input type="cargo" id="cargo" placeholder="cargo" required>
+                        <input type="salario" id="salario" placeholder="salario" required>
+                        <button onclick="criarUsuario()">cadastrar</button>
+                    </section>
+        
+                    <section class="card" id="put-section">
+                        <h2>Atualizar Usuário</h2>
+                        <input type="number" id="put-id" placeholder="ID" required>
+                        <input type="text" id="put-nome" placeholder="Novo Nome" required>
+                        <input type="cargo" id="put-cargo" placeholder="Novo cargo" required>
+                        <input type="salario" id="put-salario" placeholder="Novo salario" required>
+                        <button onclick="atualizarUsuario()">atualizar</button>
+                    </section>
+        
+                    <section class="card" id="delete-section">
+                        <h2>Remover Usuário</h2>
+                        <input type="number" id="delete-id" placeholder="ID" required>
+                        <button onclick="removerUsuario()">Remover</button>
+                        <!-- <div id="delete-result" class="result"></div> -->
+                    </section>
+                </div>           
+            </div>
 
-        <section id="get-section">
-            <h2>Listar Usuários pelo ID (GET)</h2>
-            <input type="number" id="get-id" placeholder="ID">
-            <button onclick="listarUsuariosPeloId()">Listar Usuários ID</button>
-            <div id="get-result-id" class="result"></div>
+            <!-- LISTAS -->
+            <div class="listas">
+                <nav>
+                    <button id="nav-btn-lista"><i class="fa-solid fa-list-ul"></i></button>
+                    <button id="nav-btn-lista-por-id"><i class="fa-solid fa-list-ol"></i></button>
+                </nav>
+                <div class="area-listas">
+                    <section class="card" id="get-section">
+                        <h2>Listar Usuários</h2>
+                        <button onclick="listarUsuarios()">Listar</button>
+                        <div id="get-result" class="result"></div>
+                    </section>
+        
+                    <section class="card" id="get-por-id-section">
+                        <h2>Listar Usuários pelo ID</h2>
+                        <input type="number" id="get-id" placeholder="ID" required>
+                        <button onclick="listarUsuariosPeloId()">Listar </button>
+                        <div id="get-result-id" class="result"></div>
+                    </section>
+                </div>
+            </div>     
         </section>
-
-        <section id="post-section">
-            <h2>Criar Usuário (POST)</h2>
-            <input type="text" id="nome" placeholder="Nome">
-            <input type="cargo" id="cargo" placeholder="cargo">
-            <input type="salario" id="salario" placeholder="salario">
-            <button onclick="criarUsuario()">Criar Usuário</button>
-            <div id="post-result" class="result"></div>
-        </section>
-
-        <section id="put-section">
-            <h2>Atualizar Usuário (PUT)</h2>
-            <input type="number" id="put-id" placeholder="ID">
-            <input type="text" id="put-nome" placeholder="Novo Nome">
-            <input type="cargo" id="put-cargo" placeholder="Novo cargo">
-            <input type="salario" id="put-salario" placeholder="Novo salario">
-            <button onclick="atualizarUsuario()">Atualizar Usuário</button>
-            <div id="put-result" class="result"></div>
-        </section>
-
-        <section id="delete-section">
-            <h2>Remover Usuário (DELETE)</h2>
-            <input type="number" id="delete-id" placeholder="ID">
-            <button onclick="removerUsuario()">Remover Usuário</button>
-            <div id="delete-result" class="result"></div>
-        </section>
-
         
         <script src="script.js"></script>
+        <script src="scr-menu.js"></script>
+        <script src="https://kit.fontawesome.com/a5226a0b94.js" crossorigin="anonymous"></script>
     </body>
 </html>

@@ -47,10 +47,10 @@ function criarUsuario() {
     })
     .then(response => response.json())
     .then(data => {
-        document.getElementById('post-result').innerHTML =
-            `<pre>${JSON.stringify(data, null, 2)}</pre>`;
-            listarUsuarios(); // Atualiza a lista após inserção
-    })
+    //     document.getElementById('post-result').innerHTML =
+    //         `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+             listarUsuarios(); // Atualiza a lista após inserção
+     })
     .catch(error => {
         document.getElementById('post-result').innerText = `Erro: ${error}`;
     });
@@ -72,8 +72,8 @@ function atualizarUsuario() {
     })
     .then(response => response.json())
     .then(data => {
-        document.getElementById('put-result').innerHTML =
-            `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+        // document.getElementById('put-result').innerHTML =
+        //     `<pre>${JSON.stringify(data, null, 2)}</pre>`;
             listarUsuarios(); // Atualiza a lista após atualização
     })
     .catch(error => {
@@ -90,8 +90,8 @@ function removerUsuario() {
     })
     .then(response => response.json())
     .then(data => {
-        document.getElementById('delete-result').innerHTML =
-        `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+        // document.getElementById('delete-result').innerHTML =
+        // `<pre>${JSON.stringify(data, null, 2)}</pre>`;
         listarUsuarios(); // Atualiza a lista após remoção
     })
     .catch(error => {
