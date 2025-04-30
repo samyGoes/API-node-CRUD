@@ -1,0 +1,217 @@
+{
+    "openapi": "3.1.0",
+    "info": 
+    {
+        "title": "NODE WEB API",
+        "summary": "Esta é uma API Node para um CRUD com cinco rotas básicas.",
+        "contact": { "email": "samily.goes@cs.cruzeirodosul.edu.br" },
+        "version": "1.0.0"
+        
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000/",
+            "description": "API de teste"
+        }
+    ],
+    "paths": 
+    {
+        "/funcionarios": {
+            "get": {
+                "tags": ["funcionarios"],
+                "summary": "Lista de funcionários",
+                "description": "Essa rota será responsável por listar todos os funcionários cadastrados.",
+                "requestBody": {
+                    "content": {
+                        "applicantion/json": {
+                        }
+                    }
+                },
+                "responses": {
+                    "500": { "description": "Erro no servidor" },
+                    "200": { "description": "Realizado com sucesso" }
+                }
+            },
+            "post": {
+                "tags": ["funcionarios"],
+                "summary": "Cadastro de funcionários",
+                "description": "Essa rota será responsável por cadastrar funcionários.",
+                "parameters": [
+                    {
+                        "name": "nome",
+                        "description": "Nome do funcionário que será cadastrado",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+
+                    },
+                    {
+                        "name": "cargo",
+                        "description": "Cargo do funcionário que será cadastrado",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+
+                    },
+                    {
+                        "name": "salario",
+                        "description": "Salário do funcionário que será cadastrado",
+                        "in": "path",
+                        "required": true,
+                        "type": "float"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "applicantion/json": {
+                            "examples": {
+                                "funcionario": {
+                                    "value": {
+                                        "nome": "Sâmily Silva de Goes",
+                                        "cargo": "Front-end",
+                                        "salario": 8000
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "500": { "description": "Erro no servidor" },
+                    "200": { "description": "Realizado com sucesso" }
+                }
+            }
+        },
+        "/funcionarios/:id": {
+            "get": {
+                "tags": ["funcionarios"],
+                "summary": "Lista de funcionários por ID",
+                "description": "Essa rota será responsável por listar um funcionário especificado pelo ID.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "ID do funcionário requisitado",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer"
+
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "applicantion/json": {
+                            "examples": {
+                                "funcionarios": {
+                                    "value": { "id": 1 }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "500": { "description": "Erro no servidor" },
+                    "200": { "description": "Realizado com sucesso" }
+                }
+            },
+            "put": {
+                "tags": ["funcionarios"],
+                "summary": "Atualização de funcionários",
+                "description": "Essa rota será responsável por atualizar funcionários.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "ID do funcionário que será atualizado",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer"
+
+                    },
+                    {
+                        "name": "nome",
+                        "description": "Nome do funcionário que será atualizado",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "cargo",
+                        "description": "Cargo do funcionário que será atualizado",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "salario",
+                        "description": "Salário do funcionário que será atualizado",
+                        "in": "path",
+                        "required": true,
+                        "type": "float"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "applicantion/json": {
+                            "examples": {
+                                "funcionarios": {
+                                    "value": {
+                                        "id": 1,
+                                        "nome": "Sâmily Silva de Goes",
+                                        "cargo": "Front-end",
+                                        "salario": 8000
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "500": { "description": "Erro no servidor" },
+                    "200": { "description": "Realizado com sucesso" }
+                }
+            },
+            "delete": {
+                "tags": ["funcionarios"],
+                "summary": "Exclusão de funcionários",
+                "description": "Essa rota será responsável por excluir funcionários.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "ID do funcionário que será excluído",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer"
+
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "applicantion/json": {
+                            "examples": {
+                                "funcionarios": {
+                                    "value": { "id": 1 }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "500": { "description": "Erro no servidor" },
+                    "200": { "description": "Usuário removido com sucesso" }
+                }
+            }
+        }       
+    },
+    "components": {
+        "schemas": {
+            "Funcionarios": {
+                "type": "object",
+                "properties": {
+                    "id": { "type": "integer" },
+                    "nome": { "type": "string" },
+                    "cargo": { "type": "string" },
+                    "salario": { "type": "integer" }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+CREATE DATABASE empresa;
+USE empresa;
+
+CREATE TABLE funcionarios
+(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(100) NOT NULL,
+	cargo VARCHAR(50) NOT NULL,
+	salario FLOAT NOT NULL
+);
