@@ -13,6 +13,6 @@ Esta é uma API em Node com um CRUD básico de cinco rotas.
 mysql -u root -p < caminho-até-a-pasta/API-node-CRUD/node-web-api/webapi_db.sql~
 ~~~
 
-## Documentção
+## Documentação
 A documentação foi feita utilizando o Swagger. Acesse em:
 `localhost:3000/api-docs`
