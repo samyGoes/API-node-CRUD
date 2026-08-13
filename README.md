@@ -15,7 +15,7 @@ git clone https://github.com/samyGoes/API-node-CRUD.git
 ~~~cmd
 mysql -u root -p < "caminho-até-a-pasta/xampp/htdocs/API-node-CRUD/node-web-api/webapi_db.sql"
 ~~~
-- Dentro da pasta `xampp/htdocs/API-node-CRUD/node-web-api` execute pelo terminal o comando: `npm run dev`
+- Dentro da pasta `xampp/htdocs/API-node-CRUD/node-web-api` execute pelo terminal os comandos: `npm install` e `npm run dev`
 - Acesse `localhost/API-node-CRUD/web-api-front-end/` no navegador :)
 
 ## Documentação
